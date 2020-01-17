@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monster Slayer</title>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<!--SOLUTION https://jsfiddle.net/promanovsky/b8p41nzj/79/-->
+
+<div id="app">
+    <section class="row">
+        <div class="small-6 columns">
+            <h1 class="text-center">YOU</h1>
+            <div class="healthbar">
+                <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;" :style='pHealthBar'>
+                    {{playerHealth}}
+                </div>
+            </div>
+        </div>
+        <div class="small-6 columns">
+            <h1 class="text-center">MONSTER</h1>
+            <div class="healthbar">
+                <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;" :style='mHealthBar'>
+                    {{mosterHealth}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="row controls" v-if='!running'>
+        <div class="small-12 columns">
+            <button id="start-game" @click="startNewGame()">START NEW GAME</button>
+        </div>
+    </section>
+    <section class="row controls" v-if='running'>
+        <div class="small-12 columns">
+            <button id="attack" @click='doPlayerAttack(0)'>ATTACK</button>
+            <button id="special-attack" @click='doSpecialAttack()'>SPECIAL ATTACK</button>
+            <button id="heal" @click='doHeal()'>HEAL</button>
+            <button id="give-up" @click='giveUp()'>GIVE UP</button>
+        </div>
+    </section>
+    <section class="row log" v-if='running'>
+        <div class="small-12 columns">
+            <ul>
+                <template v-for='logItem in log'>
+                    <li class='player-turn' v-if='logItem.typeAttack == "player"'>
+                        PLAYER HITS MONSTER FOR {{logItem.power}}HP
+                    </li>
+                    <li class='monster-turn' v-else-if='logItem.typeAttack == "monster"'>
+                        MONSTER HITS PLAYER FOR {{logItem.power}}HP
+                    </li>
+                    <li class='player-turn' v-else-if='logItem.typeAttack == "heal"'>
+                        PLAYER HEALS HIMSELF FOR {{logItem.power}}HP
+                    </li>
+                    <li class='player-turn' v-else>
+                        PLAYER HITS MONSTER FOR {{logItem.power}}HP BY SPECIAL ATTACK
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/Components_1/node_modules/
+/DirectivesAssignment/node_modules/
+/FiltersAssignment/node_modules/
+/FiltersSection/node_modules/
+/FormsAssignment/node_modules/
+/FormsUnit/node_modules/
+/HttpUnit/node_modules/
+/Monster Slayer with Animations/node_modules/
+/monster_project/node_modules/
+/quote_project/node_modules/
+/Slots_DynamicComponents/node_modules/
+/test_project1/
+/TransitionsSection/node_modules/
+/vue-cli/node_modules/
+/Components_1/dist/
+/DirectivesAssignment/dist/
+/DirectivesUnit/dist/
+/FiltersAssignment/dist/
+/FiltersSection/dist/
+/FormsAssignment/dist/
+/FormsUnit/dist/
+/HttpUnit/dist/
+/Monster Slayer with Animations/dist/
+/monster_project/dist/
+/quote_project/dist/
+/Slots_DynamicComponents/dist/
+/TransitionProject/dist/
+/TransitionsSection/dist/
+/vue-cli/dist/
+/DirectivesUnit/node_modules/
+/TransitionProject/node_modules/
